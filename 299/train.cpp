@@ -1,8 +1,8 @@
 #include <iostream>
 
-using namespace std;
-
 #define MAX_CARRIAGES 55
+
+using namespace std;
 
 int main()
 {
