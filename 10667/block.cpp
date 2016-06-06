@@ -1,6 +1,3 @@
-/*
-	Wrong Answer
-*/
 #include <iostream>
 
 #define MAX_NUMBER_OF_NUMBERS 150
@@ -156,7 +153,7 @@ int main()
 		// cout << endl;
 		if(res < 0)
 			res = 0;
-		
+
 		cout << res << endl;
 	}
 
