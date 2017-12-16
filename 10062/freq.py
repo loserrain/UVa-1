@@ -6,11 +6,13 @@ class Freq(object):
 		self.value = value
 
 	def __lt__(self, other):
-		print(self)
-		print(other)
+		# print(self)
+		# print(other)
 		if self.value < other.value:
+			print("less", self.key, self.value, other.key, other.value)
 			return -1
 		elif self.value > other.value:
+			print("more", self.key, self.value, other.key, other.value)
 			return 1
 		else:
 			if self.key < other.key:
@@ -34,7 +36,7 @@ for line in sys.stdin:
 		except:
 			char_map[i] = 1
 
-	char_items = sorted([Freq(k, v) for (k, v) in char_map.items()])
+	char_items = sorted([Freq(ord(k), v) for (k, v) in char_map.items()])
 
 	print()
 	for char_item in char_items:
