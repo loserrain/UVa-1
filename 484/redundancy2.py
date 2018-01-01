@@ -1,9 +1,9 @@
 import sys
-import collections
 
 # Accepted 
 
-t = collections.OrderedDict()
+t = {}
+elems = []
 
 for line in sys.stdin:
 	x = line.strip().split()
@@ -13,8 +13,7 @@ for line in sys.stdin:
 			t[i] = t[i] + 1
 		except:
 			t[i] = 1
+			elems.append(i)
 
-res = t.items()
-
-for i in res:
-	print(i[0], i[1])
+for i in elems:
+	print(i, t[i])
