@@ -1,6 +1,6 @@
 import sys
 
-# WRONG
+# Accepted 
 
 count = 0
 
@@ -24,20 +24,20 @@ while True:
 		a = int(sys.stdin.readline())
 		marble_nums.append(a)
 
-	queries = []
-	for j in range(q):
-		a = int(sys.stdin.readline())
-		queries.append(a)
-
 	marble_nums = sorted(marble_nums)
 
-	for i in queries:
-		try:
-			res = marble_nums.index(i)
-		except:
-			res = -1
-		
-		if res == -1:
-			print(i, "not found")
+	marble_pos_map = {}
+
+	index = 0
+	for i in marble_nums:
+		if i not in marble_pos_map:
+			marble_pos_map[i] = index + 1
+		index = index + 1
+
+	for j in range(q):
+		a = int(sys.stdin.readline())
+
+		if a in marble_pos_map:
+			print("%d found at %d"%(a, marble_pos_map[a]))
 		else:
-			print(i, "found at", res + 1)
+			print("%d not found"%(a))

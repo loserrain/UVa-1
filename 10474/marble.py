@@ -1,5 +1,7 @@
 import sys
 
+# WRONG
+
 count = 0
 
 def binary_search(A, k, l, h):
